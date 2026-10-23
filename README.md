@@ -125,3 +125,10 @@ Unreviewed rows remain unchanged. Uncertain references never return guessed vers
 ```
 
 Tests cover source counts and SQLite integrity, contents target resolution, ordered passages, quote provenance, Arabic/English search, pagination, CORS, translation identity, missing NKJV data, and withholding uncertain citations. See `VERIFICATION.md` for the delivery checks and remaining dependencies.
+
+
+## Production hosting
+
+Production runs on **AboHub (`155.248.209.35`)**, managed by the existing
+[Coolify dashboard](https://hub.copticfaith.org). See [DEPLOYMENT.md](DEPLOYMENT.md)
+for the deployment branch, application UUID, GitHub updates, data, and recovery.

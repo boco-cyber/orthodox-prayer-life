@@ -25,7 +25,13 @@ For a Docker Compose resource instead, select `/compose.coolify.yaml`. Configure
 - Coolify project: `Orthodox Prayer Life` (`dvtwf7w95eo2nhdlmnl9rzsx`)
 - Environment: `production` (`jgfn2mwlio4dcsq9k7q43ezw`)
 - Application: `orthodox-prayer-life-api` (`sk1kcdxtp8xshkylhb6vncmg`)
-- Uses the existing local server and `coolify` Docker network.
-- Cloudflare proxied A record for `prayerlife` points to the existing server.
+- Uses AboHub (`155.248.209.35`) and its `coolify` Docker network.
+- Cloudflare proxied A record for `prayerlife` points to `155.248.209.35`.
 
-The image includes `curl` because Coolify's generated health check requires it. Deployments use the public repository; manually redeploy from Coolify after pushing updates unless a GitHub webhook is configured.
+The image includes `curl` because Coolify's generated health check requires it. Pushes to `main` automatically deploy through the signed GitHub webhook; Coolify remains the deployment manager.
+
+## Production server
+
+Runtime: **AboHub (`155.248.209.35`)**. Control plane: `https://hub.copticfaith.org`
+on `163.192.16.13`. See [DEPLOYMENT.md](DEPLOYMENT.md) for the current identifiers,
+GitHub deployment trigger, data, and recovery.
