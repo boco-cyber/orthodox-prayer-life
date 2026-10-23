@@ -18,3 +18,14 @@ Coolify provides the reverse proxy and HTTPS. The application image already cont
 After deployment, check `/health`, `/v1/status`, `/docs`, and `/v1/bible/AVD/John/3/16`. `/v1/bible/NKJV/John/3/16` intentionally reports that a licensed NKJV source is required.
 
 For a Docker Compose resource instead, select `/compose.coolify.yaml`. Configure Coolify's domain for service `api` at port `8000`. This file uses the database baked into the image rather than a host bind mount.
+
+## Configured instance
+
+- Public API: https://prayerlife.copticfaith.org
+- Coolify project: `Orthodox Prayer Life` (`dvtwf7w95eo2nhdlmnl9rzsx`)
+- Environment: `production` (`jgfn2mwlio4dcsq9k7q43ezw`)
+- Application: `orthodox-prayer-life-api` (`sk1kcdxtp8xshkylhb6vncmg`)
+- Uses the existing local server and `coolify` Docker network.
+- Cloudflare proxied A record for `prayerlife` points to the existing server.
+
+The image includes `curl` because Coolify's generated health check requires it. Deployments use the public repository; manually redeploy from Coolify after pushing updates unless a GitHub webhook is configured.

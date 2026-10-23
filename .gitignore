@@ -7,3 +7,4 @@ source/
 *.tmp
 .env.*
 !.env.example
+live-api.png

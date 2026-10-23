@@ -1,5 +1,7 @@
 # Orthodox Prayer Library backend
 
+Public API: [prayerlife.copticfaith.org](https://prayerlife.copticfaith.org/) · [Interactive API docs](https://prayerlife.copticfaith.org/docs) · [Health](https://prayerlife.copticfaith.org/health)
+
 A self-hosted, read-only FastAPI library with Arabic and English editions of Matthew the Poor's *Orthodox Prayer Life*. It supports multiple books; the supplied sources populate one book in two editions. The Arabic app contains HTML rather than a pre-existing database. The English source is a Kindle ebook, converted with Calibre to EPUB without changing the original.
 
 ## What is included
@@ -44,7 +46,7 @@ API_DOMAIN=api.yourdomain.example docker compose -f compose.yaml -f compose.prox
 
 Caddy obtains and renews HTTPS certificates. Do not use the example domain literally. If the server already runs a reverse proxy, use `compose.yaml` alone and proxy to localhost port 8000. This package does not replace an existing proxy. The API container runs as a non-root user with a read-only database mount and filesystem.
 
-Back up `data/library.sqlite3` and the source manifests before updates. Import/rebuild operations happen offline; replace the database and restart the API when ready. Restarting recreates no data. Docker packaging is supplied but has not been built in this workspace because Docker is unavailable here.
+Back up `data/library.sqlite3` and the source manifests before updates. Import/rebuild operations happen offline; replace the database and restart the API when ready. Restarting recreates no data. The Docker image has been built and deployed successfully on Coolify; Docker is unavailable in the local workspace.
 
 ## API examples
 
@@ -71,7 +73,7 @@ Back up `data/library.sqlite3` and the source manifests before updates. Import/r
 Use OSIS book codes, e.g. `Gen`, `Ps`, `Matt`, `John`, `1Cor`. Read the actual IDs returned by the contents endpoint rather than constructing navigation IDs. Pagination uses `limit` and `offset` and returns `total`. Reference and verse text are plain strings; render using `textContent` or your framework's normal escaped text rendering.
 
 ```javascript
-const base = 'https://api.yourdomain.example';
+const base = 'https://prayerlife.copticfaith.org';
 const results = await fetch(`${base}/v1/search?` + new URLSearchParams({
   q: 'الصلاة', edition_id: 'ar'
 })).then(response => {
