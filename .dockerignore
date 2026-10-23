@@ -1,0 +1,9 @@
+.venv
+source
+__pycache__
+.pytest_cache
+tests
+*.tar.gz
+data/bible-source
+data/*.jsonl
+data/*.csv

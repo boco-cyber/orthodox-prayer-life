@@ -1,0 +1,23 @@
+{
+  "arabic_html_files": 167,
+  "english_spine_files": 28,
+  "english_chapters": 16,
+  "edition_differences": [
+    "Arabic part 1 chapters 4–5 are absent from the English contents.",
+    "Arabic part 4 and supplements have no complete English counterpart.",
+    "Chapter links are structural; paragraph and quote alignment needs bilingual review."
+  ],
+  "bible_text_status": "Imported: AVD. Missing: NKJV",
+  "quote_status": "Numbered quote candidates, preserving source text; attributions and sentence alignments need editorial review.",
+  "bible_reference_status": "Candidates require validation against supplied Bible data; Arabic ranges require review.",
+  "sections": 339,
+  "passages": 6769,
+  "quotes": 1724,
+  "bible_references": 1045,
+  "alignments": 65,
+  "reference_counts": {
+    "candidate": 392,
+    "needs_review": 433,
+    "validated": 220
+  }
+}
